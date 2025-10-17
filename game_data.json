@@ -1,0 +1,284 @@
+{
+  "name": "Witchwood",
+  "description": "Explore the forest and balance the scales.",
+  "actions": [
+    {
+      "name": "Action_set_var",
+      "actions": null,
+      "variable": "start_game",
+      "value": "1"
+    },
+    {
+      "name": "Action_change_scene",
+      "actions": null,
+      "scene_id": 0,
+      "player_pos": [
+        360,
+        16
+      ]
+    }
+  ],
+  "author": "",
+  "things": {
+    "0": {
+      "name": "Witchstone",
+      "description": "Marks the entrance to the forest",
+      "things": [],
+      "actions": [
+        {
+          "name": "Action_illustrated_message",
+          "actions": null,
+          "text_lines": [
+            "There's a fading pentacle carved",
+            "into the stone. Below that is an",
+            "inscription."
+          ],
+          "image_path": "assets/sprites/witch_stone_close_up.png"
+        },
+        {
+          "name": "Action_menu",
+          "actions": null,
+          "choices": [
+            "Yes",
+            "No"
+          ],
+          "prompt": [
+            "Do you read it?"
+          ],
+          "variable": "read_stone",
+          "useValue": false
+        },
+        {
+          "name": "Action_if_eval",
+          "actions": [
+            {
+              "name": "Action_message",
+              "actions": null,
+              "text_lines": [
+                "It says, \"Do no harm and blessed",
+                "be. Always keep the rule of",
+                "three.\""
+              ]
+            }
+          ],
+          "val1": "`$read_stone`",
+          "val2": "0",
+          "operator": "=="
+        }
+      ],
+      "id": 0,
+      "hidden": false,
+      "trigger": false,
+      "triggered": false,
+      "location": [
+        360,
+        112
+      ],
+      "dimensions": [
+        32,
+        32
+      ],
+      "dimOffset": [
+        0,
+        0
+      ],
+      "spritePath": "assets/sprites/witch_stone.png",
+      "animated": false
+    }
+  },
+  "player": {
+    "name": "Antoinette",
+    "description": "The player.",
+    "things": [],
+    "actions": [],
+    "hidden": false,
+    "trigger": false,
+    "triggered": false,
+    "location": [
+      0,
+      0
+    ],
+    "dimensions": [
+      16,
+      16
+    ],
+    "dimOffset": [
+      0,
+      0
+    ],
+    "spritePath": "assets/sprites/antoinette_sprite.png",
+    "animated": true,
+    "spriteRows": 8,
+    "spritesPerRow": 1,
+    "animations": {
+      "up": [
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "down": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "left": [
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          0
+        ]
+      ],
+      "right": [
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ]
+      ]
+    },
+    "spriteDim": [
+      16,
+      16
+    ]
+  },
+  "scenes": {
+    "0": {
+      "name": "Forest",
+      "description": "",
+      "things": [
+        0
+      ],
+      "actions": [
+        {
+          "name": "Action_if_eval",
+          "actions": [
+            {
+              "name": "Action_message",
+              "actions": null,
+              "text_lines": [
+                "Welcome to the Witchwood. This",
+                "is a simple exploration game.",
+                "Take a look around, get to know",
+                "the denizens, and maybe restore",
+                "balance. Remember every action",
+                "has consequences. Good luck!"
+              ]
+            },
+            {
+              "name": "Action_set_var",
+              "actions": null,
+              "variable": "start_game",
+              "value": "0"
+            }
+          ],
+          "val1": "`$start_game`",
+          "val2": "1",
+          "operator": "=="
+        }
+      ],
+      "id": 0,
+      "background": "assets/backgrounds/forest.png",
+      "draw_player": true,
+      "map_size": [],
+      "grid_size": null,
+      "collisions": {
+        "39": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "40": [
+          10
+        ],
+        "41": [
+          10
+        ],
+        "42": [
+          10
+        ],
+        "43": [
+          7,
+          8,
+          9
+        ],
+        "44": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "49": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "50": [
+          7,
+          8,
+          9
+        ],
+        "51": [
+          10
+        ],
+        "52": [
+          10
+        ],
+        "53": [
+          10
+        ],
+        "54": [
+          10
+        ],
+        "55": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ]
+      }
+    }
+  },
+  "callbacks": {
+    "on_select_button": {
+      "name": "on_select_button",
+      "description": "Called when the game select button is pushed during normal play.",
+      "actions": []
+    }
+  }
+}
