@@ -2,7 +2,7 @@
 
 **Created by Kevin Putnam**
 
-It was created to celebrate the 2025 Halloween season.
+It is being created to celebrate the 2025 Halloween season.
 
 It was developed using a custom JS/CSS/HTML editor that I developed to
 make creating 2D top down RPG style games easier. Both the editor and engine
