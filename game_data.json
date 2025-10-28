@@ -9,9 +9,15 @@
       "value": "1"
     },
     {
+      "name": "Action_set_var",
+      "actions": null,
+      "variable": "splash_timer",
+      "value": "3000"
+    },
+    {
       "name": "Action_change_scene",
       "actions": null,
-      "scene_id": 0,
+      "scene_id": "1",
       "player_pos": [
         360,
         16
@@ -1134,6 +1140,34 @@
           13
         ]
       }
+    },
+    "1": {
+      "name": "Splash",
+      "description": "",
+      "things": [],
+      "actions": [
+        {
+          "name": "Action_start_timer",
+          "actions": null,
+          "milliseconds": "",
+          "variable": "splash_timer"
+        },
+        {
+          "name": "Action_change_scene",
+          "actions": null,
+          "scene_id": 0,
+          "player_pos": [
+            "360",
+            "16"
+          ]
+        }
+      ],
+      "id": 1,
+      "background": "assets/backgrounds/splash_intro.png",
+      "draw_player": false,
+      "map_size": [],
+      "grid_size": null,
+      "collisions": {}
     }
   },
   "callbacks": {
